@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08070d" />
+  <meta name="description" content="Zero Point AI — a Madara-inspired prediction dashboard." />
+  <title>ZERO POINT AI — Uchiha Command</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <div class="app-shell">
+    <aside class="sidebar glass-panel" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Zero Point AI home">
+        <span class="brand-mark"><span></span></span>
+        <span><b>ZERO POINT</b><small>AI COMMAND</small></span>
+      </a>
+      <div class="sidebar-rule"></div>
+      <p class="eyebrow">OPERATIONS</p>
+      <nav class="nav-list">
+        <a class="nav-item active" href="#dashboard"><i>◈</i><span>Dashboard</span><em>01</em></a>
+        <a class="nav-item" href="#history"><i>◌</i><span>Signal history</span><em>02</em></a>
+        <a class="nav-item" href="#protocol"><i>◈</i><span>Protocol</span><em>03</em></a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-card">
+        <span class="live-dot"></span>
+        <div><strong>System online</strong><small>Encrypted local session</small></div>
+      </div>
+      <button class="channel-button" data-open-join><span>✦</span> Join intel channel <b>↗</b></button>
+      <p class="copyright">© 2026 ZERO POINT<br />Built for focused operators.</p>
+    </aside>
+
+    <main class="main-content" id="top">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark"><span></span></span><b>ZERO POINT</b></div>
+        <div class="breadcrumbs"><span>UCHIHA COMMAND</span><i>/</i><b>LIVE DASHBOARD</b></div>
+        <div class="top-actions"><span class="status-pill"><span class="live-dot"></span> LIVE FEED</span><button class="icon-button" aria-label="Toggle atmosphere" id="atmosphereToggle">◒</button></div>
+      </header>
+
+      <section class="hero" id="dashboard">
+        <div class="hero-copy">
+          <p class="kicker"><span></span> THE SHADOW KNOWS FIRST</p>
+          <h1>Read the <span>next move.</span></h1>
+          <p class="hero-subtitle">A focused command center for live signals, timing, and calculated instinct.</p>
+          <div class="hero-meta"><span class="seal">卍</span><span>UCHIHA PROTOCOL <b>v2.6</b></span><i></i><span>LOW LATENCY MODE</span></div>
+        </div>
+        <div class="character-stage" aria-label="Stylized Uchiha warrior illustration">
+          <div class="moon"></div><div class="red-moon"></div><div class="character-shadow"></div>
+          <div class="character">
+            <div class="hair hair-back"></div><div class="head"><div class="face-shade"></div><div class="eye eye-left"><span></span></div><div class="eye eye-right"><span></span></div><div class="nose"></div><div class="mask-line"></div></div>
+            <div class="hair hair-front"></div><div class="armor"><span class="collar left"></span><span class="collar right"></span><span class="plate"></span></div><div class="cloak"></div>
+          </div>
+          <div class="sharingans"><span>✦</span><span>✦</span><span>✦</span></div>
+          <div class="stage-label"><b>うちは</b><span>THE GHOST OF WAR</span></div>
+        </div>
+      </section>
+
+      <section class="command-grid">
+        <article class="period-card glass-panel">
+          <div class="card-heading"><div><p class="eyebrow">CURRENT PERIOD</p><h2 id="period">—</h2></div><span class="card-icon">◷</span></div>
+          <div class="timer-row"><span class="pulse-line"></span><span class="timer-label">NEXT ROTATION IN</span><strong id="timer">00:00</strong></div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="period-foot"><span>UTC SYNCHRONIZED</span><span id="utcTime">00:00:00</span></div>
+        </article>
+        <article class="signal-card glass-panel">
+          <div class="card-heading"><div><p class="eyebrow">CURRENT SIGNAL</p><h2 id="prediction" class="pending">AWAITING SCAN</h2></div><span class="signal-orb" id="signalOrb"></span></div>
+          <div class="signal-bottom"><div><span class="muted">CONFIDENCE</span><strong id="chance">—%</strong></div><div class="signal-state"><span class="live-dot"></span><span id="scanState">SCANNING FIELD</span></div></div>
+        </article>
+      </section>
+
+      <section class="lower-grid" id="history">
+        <article class="history-card glass-panel"><div class="section-heading"><div><p class="eyebrow">RECENT INTELLIGENCE</p><h2>Signal history</h2></div><span class="count-badge" id="historyCount">0 LOGS</span></div><div class="table-wrap"><table><thead><tr><th>PERIOD</th><th>OUTCOME</th><th>CONFIDENCE</th><th>STATUS</th></tr></thead><tbody id="historyList"><tr class="empty-row"><td colspan="4"><span class="empty-spinner"></span> Waiting for the first completed scan…</td></tr></tbody></table></div></article>
+        <article class="protocol-card glass-panel" id="protocol"><div class="section-heading"><div><p class="eyebrow">FIELD NOTES</p><h2>Protocol</h2></div><span class="seal-small">卍</span></div><div class="protocol-list"><div><b>01</b><p><strong>Stay patient.</strong><span>Every rotation is a new field.</span></p></div><div><b>02</b><p><strong>Trust the signal.</strong><span>Read the pattern, not the noise.</span></p></div><div><b>03</b><p><strong>Move with intent.</strong><span>Discipline creates the advantage.</span></p></div></div><button class="outline-button" data-open-join>ACCESS CHANNEL <span>↗</span></button></article>
+      </section>
+      <footer class="footer"><span>ZERO POINT AI / UCHIHA COMMAND INTERFACE</span><span>LOCAL BUILD · NO DATA STORED</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinTitle"><div class="join-modal glass-panel"><button class="modal-close" data-close-join aria-label="Close">×</button><div class="modal-seal">卍</div><p class="eyebrow">PRIVATE INTEL CHANNEL</p><h2 id="joinTitle">Enter the <span>shadow.</span></h2><p>Join the official channel for fresh signals, protocol updates, and field notes from the Zero Point team.</p><div class="channel-preview"><span class="telegram-icon">✈</span><div><b>Zero Point AI · Official</b><small>Live updates · encrypted community</small></div><span>↗</span></div><div class="modal-actions"><button class="cancel-button" data-close-join>Cancel</button><a class="join-button" href="https://t.me/+5Ig1VyYW4c04YjA9" target="_blank" rel="noopener">Join channel <span>↗</span></a></div><small class="modal-note">You will be redirected to Telegram in a new tab.</small></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
